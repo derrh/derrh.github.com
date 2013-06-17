@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Visiting Categories"
+description: ""
+category: 
+tags: []
+---
+{% include JB/setup %}
 You're all familiar with the [visitor pattern (wikipedia)](http://en.wikipedia.org/wiki/Visitor_pattern). One of its limitations is that it's only really useful for classes you are writing yourself. That is, unless you have a runtime that allows you to add methods to existing classes like the Objective-C runtime allows via [categories (Apple)](http://developer.apple.com/library/ios/#documentation/cocoa/conceptual/ProgrammingWithObjectiveC/CustomizingExistingClasses/CustomizingExistingClasses.html).
 
 
@@ -29,7 +37,7 @@ Now for `UIView` and each of it's subclasses, implement the `acceptVisitor:`.
 You should provide an implementation of this category for each `visit___:` method you provide in your `ViewVisitor` class. If you don't provide an implementation for a particular `UIView` subclass then it's nearest parent class's implementation of the `AcceptsViewVisitor` will invoke that parent class's associated `visit___:` method. For example if you provide a `visitScrollView:` method and implement the `AcceptsViewVisitor` category for `UIScrollView`, then calling `acceptVisitor:` on a `UITableView` will result in `visitScrollView:` being called on your visitor with that `UITableView` instance.
 
 
-**Paying a Visit***
+**Paying a Visit**
 
 Now you can pass your useful subclass of `ViewVisitor` and pass an instance to each of the views you would like to visit.
 
@@ -57,4 +65,5 @@ Now for your `WickedAwesomeViewController` just add this code to your `+ (void)i
         setAppearanceVisitor:visitor];
 
 Check out the sample code [on github](https://github.com/derrh/VisitingCategories)!
+
 
