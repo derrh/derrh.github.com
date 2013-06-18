@@ -2,8 +2,10 @@
 layout: post
 title: "Visiting Categories"
 description: ""
-category: 
-tags: []
+summary: "You're all familiar with the visitor pattern. One of its limitations is that it's only really useful for classes you are writing yourself. That is, unless you have a runtime that allows you to add methods to existing classes like the Objective-C runtime allows via categories.
+"
+category: Objective-C
+tags: [patterns, visitor, UIAppearance, categories]
 ---
 {% include JB/setup %}
 You're all familiar with the [visitor pattern (wikipedia)](http://en.wikipedia.org/wiki/Visitor_pattern). One of its limitations is that it's only really useful for classes you are writing yourself. That is, unless you have a runtime that allows you to add methods to existing classes like the Objective-C runtime allows via [categories (Apple)](http://developer.apple.com/library/ios/#documentation/cocoa/conceptual/ProgrammingWithObjectiveC/CustomizingExistingClasses/CustomizingExistingClasses.html).
